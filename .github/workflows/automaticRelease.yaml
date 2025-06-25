@@ -14,4 +14,3 @@ jobs:
     permissions:
       contents: write
     uses: nvdaes/nvdaAddonWorkflows/.github/workflows/automaticRelease.yaml@main
-    

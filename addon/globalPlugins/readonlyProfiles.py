@@ -14,19 +14,18 @@ from keyboardHandler import KeyboardInputGesture
 
 addonHandler.initTranslation()
 
+
 def preConfigSaveHandler():
 	config.conf._dirtyProfiles.clear()
 
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
-
 	def __init__(self):
 		super().__init__()
 		pre_configSave.register(preConfigSaveHandler)
 
 	def terminate(self):
 		pre_configSave.unregister(preConfigSaveHandler)
-
 
 	@script(
 		# Translators: Message presented in input help mode.
