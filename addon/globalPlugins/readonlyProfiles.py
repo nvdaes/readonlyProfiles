@@ -1,3 +1,7 @@
+# readonlyProfiles: NVDA add-on to decide when configuration profiles should be saved
+# Copyright (C) 2025 Noelia Ruiz Martínez
+# Released under GPL 2
+
 import addonHandler
 import globalPluginHandler
 import config
