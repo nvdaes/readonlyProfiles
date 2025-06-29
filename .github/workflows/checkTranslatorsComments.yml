@@ -11,8 +11,11 @@ on:
   workflow_dispatch:
 
 jobs:
+
   buildPotFileAndCheckTranslatorsComments:
 
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
 
     steps:
@@ -29,7 +32,7 @@ jobs:
         pip install scons markdown
         sudo apt update
         sudo apt install gettext
-
+    
     - name: Generate the .pot file
       run: scons pot
 
@@ -43,7 +46,7 @@ jobs:
       #  checkPot.EXPECTED_MESSAGES_WITHOUT_COMMENTS = set()
       #  res = checkPot.checkPot('$(ls *.pot)')
       #  exit(res)
-      #shell: python
+      #shell: python 
       run: |
         python -c "import checkPot;checkPot.EXPECTED_MESSAGES_WITHOUT_COMMENTS = set();exit(checkPot.checkPot('$(ls *.pot)'))"
         echo "nb_errors=$?" >> "$GITHUB_OUTPUT"
@@ -58,3 +61,4 @@ jobs:
         echo "Translators comments: FAIL"
         exit 1;
         fi
+      
