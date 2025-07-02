@@ -25,6 +25,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		pre_configSave.register(preConfigSaveHandler)
 
 	def terminate(self):
+		if config.conf["general"]["saveConfigurationOnExit"]:
+			# Don't unregister the handler, so that configuration can be saved on exit.
+			return
 		pre_configSave.unregister(preConfigSaveHandler)
 
 	@script(
