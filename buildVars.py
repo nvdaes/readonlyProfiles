@@ -25,7 +25,7 @@ addon_info = {
     # Translators: Long description to be shown for this add-on on add-on information from add-ons manager
     "addon_description": _("""Don't save profiles automatically. Press NVDA+shift+p to save the most recent profile."""),
     # version
-    "addon_version": "0.1.0",
+    "addon_version": "0.2.0",
     # Author(s)
     "addon_author": "Noelia Ruiz Martínez <nrm1977@gmail.com>",
     # URL for the add-on documentation support
