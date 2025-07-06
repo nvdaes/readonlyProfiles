@@ -43,4 +43,5 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			ui.message(_("Normal configuration cannot be saved with this command"))
 			return
 		config.conf._writeProfileToFile(profile.filename, profile)
+		# Translators: Message presented when a profile is saved.
 		ui.message(_("Saved profile {profile}")).format(profile=profile.name)
