@@ -44,4 +44,5 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			return
 		config.conf._writeProfileToFile(profile.filename, profile)
 		# Translators: Message presented when a profile is saved.
-		ui.message(_("Saved profile {profile}")).format(profile=profile.name)
+		savedProfileMessage = _("Saved profile: {profile}").format(profile=profile.name)
+		ui.message(savedProfileMessage)
