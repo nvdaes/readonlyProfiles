@@ -39,7 +39,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_saveProfile(self, gesture: KeyboardInputGesture):
 		profile = config.conf.profiles[-1]
 		if profile.name is None:
+			# Translators: Message presented when the user tries to save normal configuration.
 			ui.message(_("Normal configuration cannot be saved with this command"))
 			return
 		config.conf._writeProfileToFile(profile.filename, profile)
-		ui.message("Saved profile {profile}".format(profile=profile.name))
+		# Translators: Message presented when a profile is saved.
+		ui.message(_("Saved profile {profile}")).format(profile=profile.name)
