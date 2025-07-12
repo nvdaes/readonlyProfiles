@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: readonlyProfiles 0.2.0\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2025-07-06 14:11+0000\n"
-"PO-Revision-Date: 2025-07-06 18:00+0200\n"
+"PO-Revision-Date: 2025-07-06 22:35+0200\n"
 "Last-Translator: José Manuel Delicado <jm.delicado@nvda.es>\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -17,6 +17,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.6\n"
+
+#. Translators: Message presented in input help mode.
+msgid "Saves the current configuration to the most recent profile"
+msgstr "Guarda la configuración en el perfil más reciente"
+
+#. Translators: Message presented when the user tries to save normal configuration.
+msgid "Normal configuration cannot be saved with this command"
+msgstr "No se puede guardar la configuración normal con esta orden"
+
+#. Translators: Message presented when a profile is saved.
+#, python-brace-format
+msgid "Saved profile: {profile}"
+msgstr "Perfil guardado: {profile}"
 
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on
@@ -30,5 +43,5 @@ msgid ""
 "Don't save profiles automatically. Press NVDA+shift+p to save the most "
 "recent profile."
 msgstr ""
-"No guardes los perfiles automáticamente. Pulsa NVDA+shift+p para "
-"guardar el perfil más reciente."
+"No guardes los perfiles automáticamente. Pulsa NVDA+shift+p para guardar el "
+"perfil más reciente."

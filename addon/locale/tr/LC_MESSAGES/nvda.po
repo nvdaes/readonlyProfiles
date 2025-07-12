@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Salt Okunur Profiller 0.2.0\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2025-07-06 14:11+0000\n"
-"PO-Revision-Date: 2025-07-06 18:19+0300\n"
+"PO-Revision-Date: 2025-07-06 20:55+0300\n"
 "Last-Translator: Umut KORKMAZ <umutkork@gmail.com>\n"
 "Language-Team: Umut KORKMAZ <umutkork@gmail.com>\n"
 "Language: tr_TR\n"
@@ -17,6 +17,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.6\n"
+
+#. Translators: Message presented in input help mode.
+msgid "Saves the current configuration to the most recent profile"
+msgstr "Geçerli konfigürasyonu en son profile kaydeder"
+
+#. Translators: Message presented when the user tries to save normal configuration.
+msgid "Normal configuration cannot be saved with this command"
+msgstr "Normal konfigürasyon bu komutla kaydedilemez"
+
+#. Translators: Message presented when a profile is saved.
+#, python-brace-format
+msgid "Saved profile: {profile}"
+msgstr "Kaydedilen profil: {profile}"
 
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on
