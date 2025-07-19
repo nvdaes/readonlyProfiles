@@ -1,0 +1,48 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the readonlyProfiles package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: readonlyProfiles 0.2.0\n"
+"Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
+"POT-Creation-Date: 2025-07-06 17:48+0000\n"
+"PO-Revision-Date: 2025-07-12 18:49+0300\n"
+"Last-Translator: Ruslan Kolodyazhni <rupelodn@gmail.com>\n"
+"Language-Team: Translators\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+
+#. Translators: Message presented in input help mode.
+msgid "Saves the current configuration to the most recent profile"
+msgstr "Сохраняет текущую конфигурацию в самый последний профиль"
+
+#. Translators: Message presented when the user tries to save normal configuration.
+msgid "Normal configuration cannot be saved with this command"
+msgstr ""
+"Нормальная конфигурация не может быть сохранена с помощью этой команды"
+
+#. Translators: Message presented when a profile is saved.
+#, python-brace-format
+msgid "Saved profile: {profile}"
+msgstr "Сохранённый профиль: {profile}"
+
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on
+#. to be shown on installation and add-on information found in Add-ons Manager.
+msgid "Readonly Profiles"
+msgstr "Профили только для чтения"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+msgid ""
+"Don't save profiles automatically. Press NVDA+shift+p to save the most "
+"recent profile."
+msgstr ""
+"Не сохранять профили автоматически. Нажмите NVDA+shift+p для "
+"сохранения самого последнего профиля."
