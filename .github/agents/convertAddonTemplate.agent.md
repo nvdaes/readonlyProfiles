@@ -20,7 +20,7 @@ Convert this NVDA add-on to use the official NV Access template from https://git
 ### 2. Fetch Template
 Fetch these files from nvaccess/addonTemplate using `github_repo` tool:
 - buildVars.py
-- sconstruct  
+- sconstruct
 - manifest.ini.tpl, manifest-translated.ini.tpl
 - site_scons/ folder structure
 - pyproject.toml
