@@ -59,8 +59,8 @@ addon_info = AddonInfo(
 # For more information on SCons Glob expressions please take a look at:
 # https://scons.org/doc/production/HTML/scons-user/apd.html
 pythonSources: list[str] = [
-    os.path.join("addon", "*.py"),
-    os.path.join("addon", "globalPlugins", "*.py"),
+    "addon/*.py",
+    "addon/globalPlugins/*.py",
 ]
 
 # Files that contain strings for translation. Usually your python sources

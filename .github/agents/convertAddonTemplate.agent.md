@@ -1,7 +1,6 @@
 ---
 name: convert-addon-template
 description: Convert NVDA add-on to official NV Access template structure
-version: 1.0.0
 ---
 
 # NVDA Add-on Template Converter
