@@ -14,7 +14,7 @@ Convert NVDA add-ons to use the official NV Access template structure from https
 - Use `github_repo` tool to fetch content from `nvaccess/addonTemplate`
 - Focus on these key files:
   - `buildVars.py` - build configuration
-  - `sconstruct` - build script  
+  - `sconstruct` - build script
   - `manifest.ini.tpl` and `manifest-translated.ini.tpl` - manifest templates
   - `site_scons/` folder - build tools
   - `pyproject.toml` - linter/type checker config
