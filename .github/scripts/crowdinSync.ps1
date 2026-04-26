@@ -5,7 +5,7 @@ git config user.name "github-actions[bot]"
 git config user.email "github-actions[bot]@users.noreply.github.com"
 
 # Update xliff file
-$xlifFile = "$addonId.xliff"
+$xlifFile = "./$addonId.xliff"
 $mdFile = "./readme.md"
 if (Test-Path $mdFile) {
     if (Test-Path $xliffFile) {
