@@ -12,6 +12,7 @@ if (-not $addonId) {
     exit 1
 }
 
+# Process each language directory
 foreach ($dir in Get-ChildItem -Path "_addonL10n/$addonId" -Directory) {
     Write-Host "=============================="
     Write-Host "Processing language: $($dir.Name)"
@@ -77,21 +78,46 @@ foreach ($dir in Get-ChildItem -Path "_addonL10n/$addonId" -Directory) {
     }
 } # End foreach
 
-          # COMMIT CHANGES
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+# COMMIT CHANGES
+git config user.name "github-actions[bot]"
+git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add addon/locale addon/doc
+git add addon/locale addon/doc
 
-          git diff --staged --quiet
-          if ($LASTEXITCODE -ne 0) {
-            git commit -m "Update translations for $addonId from Crowdin"
-            git switch $env:downloadTranslationsBranch 2>$null
+git diff --staged --quiet
+if ($LASTEXITCODE -ne 0) {
+    git commit -m "Update translations for $addonId from Crowdin"
+    git switch $env:downloadTranslationsBranch 2>$null
 
-            if ($LASTEXITCODE -ne 0) {
-              git switch -c $env:downloadTranslationsBranch
-            }
-            git push -f --set-upstream origin $env:downloadTranslationsBranch
-          } else {
-            Write-Host "Nothing to commit."
-          }
+    if ($LASTEXITCODE -ne 0) {
+        git switch -c $env:downloadTranslationsBranch
+    }
+    git push -f --set-upstream origin $env:downloadTranslationsBranch
+} else {
+    Write-Host "Nothing to commit."
+}
+
+# Update xliff
+$xlifFile = "$addonId.xliff"
+$mdFile = "./readme.md"
+if ((Test-Path $xlifFile) -and (Test-Path $mdFile)) {
+    $tempXliff = [System.IO.Path]::GetTempFileName()
+    Copy-Item "$addonId.xliff" $tempXliff -Force
+    Write-Host "Copied $addonId.xliff to temporary file: $tempXliff"
+    uv run .github/scripts/markdownTranslate.py updateXliff -m $mdFile -x $tempXliff -o $xliffFile  
+    Write-Host "Updated $xlifFile based on $mdFile"
+    Write-Host "Uploading updated XLIFF to Crowdin..."
+    ./l10nUtil.exe uploadSourceFile "$xlifFile" -c addon
+} else {
+    Write-Host "Documentation files not found, skipping xliff update."
+}
+
+# Update pot file
+scons pot
+$potFile = "$addonId.pot"
+if (Test-Path $potFile) {
+    Write-Host "Uploading updated POT to Crowdin..."
+    ./l10nUtil.exe uploadSourceFile "$potFile" -c addon
+} else {
+    Write-Host "POT file not found, skipping POT update."
+}
