@@ -4,6 +4,12 @@ $ErrorActionPreference = 'Stop'
 git config user.name "github-actions[bot]"
 git config user.email "github-actions[bot]@users.noreply.github.com"
 
+$addonId = $env:ADDON_ID.Trim()
+if (-not $addonId) {
+    Write-Error "Failed to get addon ID. Ensure buildVars.py and dependencies are present."
+    exit 1
+}
+
 # Update xliff file
 $xlifFile = "./$addonId.xliff"
 $mdFile = "./readme.md"
@@ -54,11 +60,7 @@ write-host "Exporting translations from Crowdin..."
 
 New-Item -ItemType Directory -Force -Path addon/locale | Out-Null
 New-Item -ItemType Directory -Force -Path addon/doc | Out-Null
-$addonId = $env:ADDON_ID.Trim()
-if (-not $addonId) {
-    Write-Error "Failed to get addon ID. Ensure buildVars.py and dependencies are present."
-    exit 1
-}
+
 
 # Process each language directory
 foreach ($dir in Get-ChildItem -Path "_addonL10n/$addonId" -Directory) {
