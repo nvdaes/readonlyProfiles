@@ -29,7 +29,7 @@ if (Test-Path $mdFile) {
 }
 
 # Update pot file in Crowdin
-scons pot
+uv run scons pot
 $potFile = "$addonId.pot"
 if (Test-Path $potFile) {
     Write-Host "Uploading updated POT to Crowdin..."
