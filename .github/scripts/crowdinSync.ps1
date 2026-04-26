@@ -100,16 +100,18 @@ if ($LASTEXITCODE -ne 0) {
 # Update xliff
 $xlifFile = "$addonId.xliff"
 $mdFile = "./readme.md"
-if ((Test-Path $xlifFile) -and (Test-Path $mdFile)) {
-    $tempXliff = [System.IO.Path]::GetTempFileName()
-    Copy-Item "$addonId.xliff" $tempXliff -Force
-    Write-Host "Copied $addonId.xliff to temporary file: $tempXliff"
-    uv run .github/scripts/markdownTranslate.py updateXliff -m $mdFile -x $tempXliff -o $xliffFile  
-    Write-Host "Updated $xlifFile based on $mdFile"
-    Write-Host "Uploading updated XLIFF to Crowdin..."
-    ./l10nUtil.exe uploadSourceFile "$xlifFile" -c addon
-} else {
-    Write-Host "Documentation files not found, skipping xliff update."
+if (Test-Path $mdFile) {
+    if (Test-Path $xliffFile) {
+        $tempXliff = [System.IO.Path]::GetTempFileName()
+        Copy-Item "$addonId.xliff" $tempXliff -Force
+        Write-Host "Copied $addonId.xliff to temporary file: $tempXliff"
+        uv run .github/scripts/markdownTranslate.py updateXliff -m $mdFile -x $tempXliff -o $xliffFile  
+        Write-Host "Updated $xlifFile based on $mdFile"
+    } else {
+        Write-Host "XLIFF file not found, but readme.md exists. Creating an XLIFF template for translations."
+        uv run .github/scripts/markdownTranslate.py generateXliff -m $mdFile -o $xliffFile
+    } else {
+        Write-Host "readme.md not found. Skipping XLIFF generation."
 }
 
 # Update pot file
@@ -120,4 +122,10 @@ if (Test-Path $potFile) {
     ./l10nUtil.exe uploadSourceFile "$potFile" -c addon
 } else {
     Write-Host "POT file not found, skipping POT update."
+}
+if (Test-Path $xliffFile) {
+    Write-Host "Uploading XLIFF to Crowdin..."
+    ./l10nUtil.exe uploadSourceFile "$xliffFile" -c addon
+} else {
+    Write-Host "XLIFF file not found, skipping XLIFF upload."
 }
