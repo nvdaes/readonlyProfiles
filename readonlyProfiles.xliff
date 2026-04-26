@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en">
+<file id="readme.md" original="https://raw.githubusercontent.com/nvdaes/readonlyProfiles/b21d94b899139afb225c2b38aa9ecd11dfae7857/readme.md">
+<skeleton>
+# $(ID:31af2cbc-1292-49e4-9bbd-7cbb0d92503e)
+
+* $(ID:cc729e5b-bd92-43ce-9157-99ada0638944)
+
+$(ID:8e81af41-c8bd-4309-837c-2eee341d2378)
+
+$(ID:a4bcdf6d-2893-4ca6-9832-42c237dc30db)
+
+$(ID:fc7d3d36-e565-4cf2-b53a-56d10cb79c7a)
+
+</skeleton>
+<unit id="31af2cbc-1292-49e4-9bbd-7cbb0d92503e">
+<notes>
+<note appliesTo="source">line: 2</note>
+<note appliesTo="source">prefix: # </note>
+</notes>
+<segment>
+<source>Readonly Profiles</source>
+</segment>
+</unit>
+<unit id="cc729e5b-bd92-43ce-9157-99ada0638944">
+<notes>
+<note appliesTo="source">line: 4</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Author: Noelia Ruiz Martínez</source>
+</segment>
+</unit>
+<unit id="8e81af41-c8bd-4309-837c-2eee341d2378">
+<notes>
+<note appliesTo="source">line: 6</note>
+</notes>
+<segment>
+<source>When this add-on is enabled, configuration profiles won't be saved automatically.</source>
+</segment>
+</unit>
+<unit id="a4bcdf6d-2893-4ca6-9832-42c237dc30db">
+<notes>
+<note appliesTo="source">line: 8</note>
+</notes>
+<segment>
+<source>Press NVDA+shift+p to save the current configuration to the most recent profile.</source>
+</segment>
+</unit>
+<unit id="fc7d3d36-e565-4cf2-b53a-56d10cb79c7a">
+<notes>
+<note appliesTo="source">line: 10</note>
+</notes>
+<segment>
+<source>This command can be changed from NVDA's menu, Preferences submenu, Input Gestures dialog, Configuration category.</source>
+</segment>
+</unit>
+</file>
+</xliff>
