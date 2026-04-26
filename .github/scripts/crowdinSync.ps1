@@ -11,7 +11,7 @@ if (-not $addonId) {
 }
 
 # Update xliff file
-$xlifFile = "./$addonId.xliff"
+$xliffFile = "./$addonId.xliff"
 $mdFile = "./readme.md"
 if (Test-Path $mdFile) {
     if (Test-Path $xliffFile) {
@@ -19,7 +19,7 @@ if (Test-Path $mdFile) {
         Copy-Item "$addonId.xliff" $tempXliff -Force
         Write-Host "Copied $addonId.xliff to temporary file: $tempXliff"
         uv run .github/scripts/markdownTranslate.py updateXliff -m $mdFile -x $tempXliff -o $xliffFile  
-        Write-Host "Updated $xlifFile based on $mdFile"
+        Write-Host "Updated $xliffFile based on $mdFile"
     } else {
         Write-Host "XLIFF file not found, but readme.md exists. Creating an XLIFF template for translations."
         uv run .github/scripts/markdownTranslate.py generateXliff -m $mdFile -o $xliffFile
