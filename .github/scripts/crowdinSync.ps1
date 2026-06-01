@@ -18,7 +18,7 @@ if (Test-Path $mdFile) {
         $tempXliff = [System.IO.Path]::GetTempFileName()
         Copy-Item "$addonId.xliff" $tempXliff -Force
         Write-Host "Copied $addonId.xliff to temporary file: $tempXliff"
-        uv run .github/scripts/markdownTranslate.py updateXliff -m $mdFile -x $tempXliff -o $xliffFile  
+        uv run .github/scripts/markdownTranslate.py updateXliff -m $mdFile -x $tempXliff -o $xliffFile
         Write-Host "Updated $xliffFile based on $mdFile"
     } else {
         Write-Host "XLIFF file not found, but readme.md exists. Creating an XLIFF template for translations."
