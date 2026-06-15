@@ -1,34 +1,34 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the readonlyProfiles package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: readonlyProfiles 0.2.0\n"
-"Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
-"POT-Creation-Date: 2025-07-06 17:48+0000\n"
-"PO-Revision-Date: 2025-07-11 22:48+0100\n"
-"Last-Translator: Ângelo Abrantes <ampa4374@gmail.com>\n"
-"Language-Team: Equipa Portuguesa do NVDA: Ângelo Abrantes e Rui "
-"Fontes\n"
+"Project-Id-Version: nvdaaddons\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2026-05-04 00:38+0000\n"
+"PO-Revision-Date: 2026-06-15 16:44\n"
+"Last-Translator: \n"
+"Language-Team: Portuguese\n"
 "Language: pt_PT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.6\n"
-"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: nvdaaddons\n"
+"X-Crowdin-Project-ID: 780748\n"
+"X-Crowdin-Language: pt-PT\n"
+"X-Crowdin-File: readonlyProfiles.pot\n"
+"X-Crowdin-File-ID: 618\n"
 
 #. Translators: Message presented in input help mode.
+#: addon\globalPlugins\readonlyProfiles.py:35
 msgid "Saves the current configuration to the most recent profile"
 msgstr "Guarda a configuração atual no perfil mais recente"
 
 #. Translators: Message presented when the user tries to save normal configuration.
+#: addon\globalPlugins\readonlyProfiles.py:43
 msgid "Normal configuration cannot be saved with this command"
 msgstr "A configuração normal não pode ser guardada com este comando"
 
 #. Translators: Message presented when a profile is saved.
+#: addon\globalPlugins\readonlyProfiles.py:47
 #, python-brace-format
 msgid "Saved profile: {profile}"
 msgstr "Perfil guardado: {profile}"
@@ -36,14 +36,19 @@ msgstr "Perfil guardado: {profile}"
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on
 #. to be shown on installation and add-on information found in Add-ons Manager.
+#: buildVars.py:21
 msgid "Readonly Profiles"
 msgstr "Perfis só de leitura"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-msgid ""
-"Don't save profiles automatically. Press NVDA+shift+p to save the most "
-"recent profile."
-msgstr ""
-"Não guardar perfis automaticamente. Prima NVDA+shift+p para guardar o "
-"perfil mais recente."
+#: buildVars.py:24
+msgid "Don't save profiles automatically. Press NVDA+shift+p to save the most recent profile."
+msgstr "Não guardar perfis automaticamente. Prima NVDA+shift+p para guardar o perfil mais recente."
+
+#. Brief changelog for this version
+#. Translators: what's new content for the add-on version to be shown in the add-on store
+#: buildVars.py:29
+msgid "* Compatible with NVDA 2026.1."
+msgstr "* Compatível com NVDA 2026.1."
+
