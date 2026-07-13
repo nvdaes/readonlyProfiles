@@ -1,33 +1,34 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the readonlyProfiles package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: readonlyProfiles 0.2.0\n"
-"Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
-"POT-Creation-Date: 2025-07-06 17:48+0000\n"
-"PO-Revision-Date: 2025-07-12 18:49+0300\n"
-"Last-Translator: Ruslan Kolodyazhni <rupelodn@gmail.com>\n"
-"Language-Team: Translators\n"
+"Project-Id-Version: nvdaaddons\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2026-07-13 00:35+0000\n"
+"PO-Revision-Date: 2026-07-13 00:36\n"
+"Last-Translator: \n"
+"Language-Team: Russian\n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.5\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Crowdin-Project: nvdaaddons\n"
+"X-Crowdin-Project-ID: 780748\n"
+"X-Crowdin-Language: ru\n"
+"X-Crowdin-File: readonlyProfiles.pot\n"
+"X-Crowdin-File-ID: 618\n"
 
 #. Translators: Message presented in input help mode.
+#: addon\globalPlugins\readonlyProfiles.py:35
 msgid "Saves the current configuration to the most recent profile"
 msgstr "Сохраняет текущую конфигурацию в самый последний профиль"
 
 #. Translators: Message presented when the user tries to save normal configuration.
+#: addon\globalPlugins\readonlyProfiles.py:43
 msgid "Normal configuration cannot be saved with this command"
-msgstr ""
-"Нормальная конфигурация не может быть сохранена с помощью этой команды"
+msgstr "Нормальная конфигурация не может быть сохранена с помощью этой команды"
 
 #. Translators: Message presented when a profile is saved.
+#: addon\globalPlugins\readonlyProfiles.py:47
 #, python-brace-format
 msgid "Saved profile: {profile}"
 msgstr "Сохранённый профиль: {profile}"
@@ -35,14 +36,19 @@ msgstr "Сохранённый профиль: {profile}"
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on
 #. to be shown on installation and add-on information found in Add-ons Manager.
+#: buildVars.py:21
 msgid "Readonly Profiles"
 msgstr "Профили только для чтения"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-msgid ""
-"Don't save profiles automatically. Press NVDA+shift+p to save the most "
-"recent profile."
-msgstr ""
-"Не сохранять профили автоматически. Нажмите NVDA+shift+p для "
-"сохранения самого последнего профиля."
+#: buildVars.py:24
+msgid "Don't save profiles automatically. Press NVDA+shift+p to save the most recent profile."
+msgstr "Не сохранять профили автоматически. Нажмите NVDA+shift+p для сохранения самого последнего профиля."
+
+#. Brief changelog for this version
+#. Translators: what's new content for the add-on version to be shown in the add-on store
+#: buildVars.py:29
+msgid "* Updates to translations."
+msgstr "* Обновления переводов."
+
