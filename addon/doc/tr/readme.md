@@ -1,12 +1,9 @@
 # Salt Okunur Profiller
 
-* Yazar: Noelia Ruiz Martínez
+* Yazarı: Noelia Ruiz Martínez
 
-Bu eklenti etkinleştirildiğinde, yapılandırma profilleri otomatik olarak
-kaydedilmeyecektir.
+Bu eklenti etkinleştirildiğinde konfigürasyon profilleri otomatik olarak kaydedilmeyecektir.
 
-Geçerli yapılandırmayı en son profile kaydetmek için NVDA+Shift+P tuşuna
-basın.
+Geçerli KONFİGÜRASYONU en yeni profile kaydetmek için NVDA+shift+p tuşlarına basın.
 
-Bu komut NVDA menüsü, Tercihler alt menüsü, Girdi Hareketleri iletişim
-kutusu, Konfigürasyon kategorisinden değiştirilebilir.
+Bu komut NVDA menüsü, Tercihler alt menüsü, GirDi Hareketleri iletişim kutusunda, Konfigürasyon kategorisinden değiştirilebilir.
