@@ -3,6 +3,8 @@ requires = ["setuptools~=80.9", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
+# This package is not installed as a library; every dependency is tooling used to
+# build, translate, or lint the add-on. They are declared as PEP 735 dependency groups.
 name = "readonlyProfiles"
 dynamic = ["version"]
 description = "Readonly Profiles"
@@ -19,38 +21,53 @@ classifiers = [
 	"Topic :: Accessibility",
 ]
 readme = "readme.md"
-license = {file = "LICENSE"}
-dependencies = [
-	# Build add-on
+license = {file = "COPYING.TXT"}
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/nvdaes/readonlyProfiles"
+
+# PEP 735 dependency groups. `uv sync` installs the `dev` group by default, which
+# pulls in every tool needed to build, translate, and lint the add-on.
+
+[dependency-groups]
+# Build add-on
+build = [
 	"scons==4.10.1",
 	"Markdown==3.10",
-	# Translations management
+]
+# Translations management
+l10n = [
 	"nh3==0.3.2",
 	"crowdin-api-client==1.24.1",
 	"lxml==6.1.0",
 	"mdx_truly_sane_lists==1.3",
 	"markdown-link-attr-modifier==0.2.1",
 	"mdx-gh-links==0.4",
-	# Lint
+]
+# Lint
+lint = [
 	"uv==0.11.15",
 	"ruff==0.14.5",
-	"pre-commit==4.2.0",
+	"prek==0.4.8",
 	"pyright[nodejs]==1.1.407",
 ]
-[project.urls]
-Repository = "https://github.com/nvaccess/addonTemplate"
+dev = [
+	{include-group = "build"},
+	{include-group = "l10n"},
+	{include-group = "lint"},
+	{include-group = "build"},
+	{include-group = "l10n"},
+	{include-group = "lint"},
+]
 
 [tool.ruff]
 line-length = 110
 
 builtins = [
-	# translation lookup
 	"_",
-	# translation lookup
 	"ngettext",
-	# translation lookup
 	"pgettext",
-	# translation lookup
 	"npgettext",
 ]
 
@@ -64,6 +81,7 @@ exclude = [
 	"__pycache__",
 	".venv",
 	"buildVars.py",
+	"tests",
 ]
 
 [tool.ruff.format]
@@ -74,10 +92,7 @@ line-ending = "lf"
 max-complexity = 15
 
 [tool.ruff.lint]
-ignore = [
-	# indentation contains tabs
-	"W191",
-]
+ignore = ["W191"]
 logger-objects = ["logHandler.log"]
 
 [tool.ruff.lint.per-file-ignores]
@@ -102,9 +117,7 @@ exclude = [
 	".venv",
 	"site_scons",
 	".github/scripts",
-	# When excluding concrete paths relative to a directory,
-	# not matching multiple folders by name e.g. `__pycache__`,
-	# paths are relative to the configuration file.
+	"tests",
 ]
 
 # Tell pyright where to load python code from
