@@ -22,7 +22,7 @@ addon_info = AddonInfo(
 	# Translators: Long description to be shown for this add-on on add-on information from add-on store
 	addon_description=_("Don't save profiles automatically. Press NVDA+shift+p to save the most recent profile."),
 	# version
-	addon_version="2.1.0",
+	addon_version="3.0.0",
 	# Brief changelog for this version
 	# Translators: what's new content for the add-on version to be shown in the add-on store
 	addon_changelog=_('* Updates to translations.'),
